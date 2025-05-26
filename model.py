@@ -7,8 +7,16 @@ import neattext as nt
 
 # Función de transformación y predicción
 def predict_genre(plot: str) -> pd.DataFrame:
-    tfidf = joblib.load('featureX.pkl') 
-    clf = joblib.load('genreclf.pkl') 
+    
+    script_dir = Path(__file__).parent
+
+    # Construye las rutas completas a los archivos
+    tfidf_path = script_dir / 'featureX.pkl'
+    clf_path = script_dir / 'genreclf.pkl'
+
+    # Carga los modelos
+    tfidf = joblib.load(tfidf_path)
+    clf = joblib.load(clf_path)
 
     plot_df = pd.DataFrame([plot], columns=['plot'])
 
