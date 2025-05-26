@@ -1,0 +1,7 @@
+Flask==2.3.3
+flask-restx==1.1.0
+pandas==2.2.2
+numpy==1.26.4
+scikit-learn==1.4.2
+joblib==1.4.2
+neattext==0.1.3
