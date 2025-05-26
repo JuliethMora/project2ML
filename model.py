@@ -13,8 +13,9 @@ def predict_genre(plot: str) -> pd.DataFrame:
     
     # Construye las rutas absolutas para los archivos .pkl
     tfidf_path = os.path.join(script_dir, 'featureX.pkl')
+    print(tfidf_path)
     clf_path = os.path.join(script_dir, 'genreclf.pkl')
-    
+    print(clf_path)
     # Carga los modelos
     tfidf = joblib.load(tfidf_path)
     clf = joblib.load(clf_path)
