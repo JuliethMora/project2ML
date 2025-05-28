@@ -38,6 +38,11 @@ class GenrePrediction(Resource):
     def get(self):
         args = parser.parse_args()
         plot = args['plot']
+        # Asegurar que plot sea texto
+            if isinstance(plot, dict):
+                plot = plot.get('plot', '')
+            else:
+                plot = str(plot)
         result_df = predict_genre(plot)
         return {'result': result_df.to_dict()}, 200
 
