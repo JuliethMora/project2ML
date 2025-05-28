@@ -12,7 +12,7 @@ def predict_genre(plot: str) -> pd.DataFrame:
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
     # Construye las rutas absolutas para los archivos .pkl
-    tfidf_path = os.path.join(script_dir, 'featureX.pkl')
+    tfidf_path = os.path.join(script_dir, 'featureX_.pkl')
     print(tfidf_path)
     clf_path = os.path.join(script_dir, 'genreclf.pkl')
     print(clf_path)
