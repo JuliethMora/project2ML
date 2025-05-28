@@ -29,6 +29,8 @@ def predict_genre(plot: str) -> pd.DataFrame:
     #plot_df['plot'] = plot_df['plot'].apply(lambda x: nt.TextFrame(x).noise_scan())
     #plot_df['plot'] = plot_df['plot'].apply(lambda x: nt.TextExtractor(x).extract_stopwords())
     #plot_df['plot'] = plot_df['plot'].apply(nfx.remove_stopwords)
+    
+    print("Cleaned plot:", plot_df['plot'].tolist())
 
     Xfeatures = tfidf.transform(plot_df['plot']).toarray()
 
